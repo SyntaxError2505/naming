@@ -1,7 +1,7 @@
 # SyntaxError's C naming convention
 Because naming things is hard
 ## Structs (and unions)
-Struct and untions definitions follow PascalCase and always use a typedef with the same name:
+Struct and untions definitions follow PascalCase and always use a typedef and tag with the same name. While they should be used by the typedef (without the struct keyword), the tag allows for recursive structs and forcing it just makes the code more uniform:
 ```C
 typdef struct CoolStruct {
     int cool_field;
@@ -71,3 +71,5 @@ typedef enum TokenKinds {
     HELLO_WORLD
 } TokenKinds
 ```
+## Labels
+Labels are not to be used in C. They make code more complicated instead of just using design patterns like early return statements.
